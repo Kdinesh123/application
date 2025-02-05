@@ -63,7 +63,7 @@ def login():
 
     return render_template('login.html')
 
-
+#dashboard
 @app.route('/dashboard')
 def dashboard():
     if session['email']:
