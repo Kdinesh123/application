@@ -7,6 +7,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
 db = SQLAlchemy(app)
 app.secret_key = 'secret_key'
 
+#database
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(100), nullable=False)
@@ -24,7 +25,7 @@ class User(db.Model):
 with app.app_context():
     db.create_all()
 
-
+#path route
 @app.route('/')
 def index():
     return render_template('index.html')
